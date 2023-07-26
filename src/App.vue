@@ -4,7 +4,7 @@
   </app-layout>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import AppLayout from "@/layouts/AppLayout.vue";
 

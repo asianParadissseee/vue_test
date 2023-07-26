@@ -6,7 +6,7 @@
       v-for="card in cards"
       :key="card.id"
       :card="card"
-      @click="$emit('remove', card)"
+      @click="$emit('remove', card.id)"
     />
   </div>
   <h1 v-else>Card not found</h1>

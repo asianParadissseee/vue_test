@@ -16,10 +16,6 @@ import { mapActions, mapMutations, mapState, Store } from "vuex";
 import { CardState } from "@/types/storeTypes";
 import AppLoader from "@/components/AppLoader.vue";
 
-interface MyComponent extends ReturnType<typeof defineComponent> {
-  $store: Store<CardState>; // Replace 'any' with your actual store type if available
-}
-
 export default defineComponent({
   computed: {
     ...mapState<CardState>("card", {
@@ -42,7 +38,7 @@ export default defineComponent({
       this.addCard(card);
     },
     removeCard(cardId: number) {
-      (this as MyComponent).$store.commit("card/removeCard", cardId);
+      this.removeCard(cardId);
     },
   },
   mounted() {

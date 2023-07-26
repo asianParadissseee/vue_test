@@ -24,11 +24,9 @@ export const CardModule = {
     },
     addCard(state: CardState, card: ICard) {
       state.cards.push(card);
-      // If this function is calling itself again, it can cause a stack overflow.
     },
     removeCard(state: CardState, cardId: number): void {
       state.cards = state.cards.filter((card) => card.id !== cardId);
-      // If this function is calling itself again, it can cause a stack overflow.
     },
   } as CardMutations,
   actions: {

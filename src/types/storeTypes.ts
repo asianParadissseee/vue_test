@@ -24,7 +24,6 @@ export interface CardState {
 export interface CardMutations extends MutationTree<CardState> {
   setCards(state: CardState, cards: ICard[]): void;
   setLoading(state: CardState, bool: boolean): void;
-  setSearchQuery(state: CardState, searchQuery: string): void;
   addCard(state: CardState, card: ICard): void;
   removeCard(state: CardState, cardId: number): void;
 }

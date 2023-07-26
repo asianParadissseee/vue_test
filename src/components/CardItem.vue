@@ -5,7 +5,7 @@
       <p>description: {{ card.body }}</p>
     </div>
     <div class="btns">
-      <my-button @click="$emit('remove', card)">Delete</my-button>
+      <my-button @click="$emit('remove', card.id)">Delete</my-button>
       <my-button
         @click="
           $router.push({

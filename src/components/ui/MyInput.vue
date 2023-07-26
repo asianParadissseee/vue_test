@@ -1,12 +1,20 @@
 <template>
-  <input class="input" type="text" />
+  <input class="input" type="text" :value="modelValue" @input="updateInput" />
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "my-input",
+  props: {
+    modelValue: [String, Number],
+  },
+  methods: {
+    updateInput(event: Event) {
+      this.$emit("update:modelValue", event.target.value);
+    },
+  },
 });
 </script>
 

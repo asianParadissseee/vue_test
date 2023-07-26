@@ -1,9 +1,9 @@
 import { createStore } from "vuex";
+import { CardModule } from "@/store/CardModules";
 
+// export interface StateInterface {}
 export default createStore({
-  state: {},
-  getters: {},
-  mutations: {},
-  actions: {},
-  modules: {},
+  modules: {
+    card: CardModule,
+  },
 });

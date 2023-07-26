@@ -12,7 +12,7 @@ export default defineComponent({
   },
   methods: {
     updateInput(event: Event) {
-      this.$emit("update:modelValue", event.target.value);
+      this.$emit("update:modelValue", (event.target as HTMLInputElement).value);
     },
   },
 });

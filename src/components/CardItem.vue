@@ -20,13 +20,16 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-
 export default defineComponent({
   props: {
     card: {
       type: Object,
       required: true,
     },
+  },
+  mounted() {
+    console.log("test");
+    console.log(this.card);
   },
 });
 </script>

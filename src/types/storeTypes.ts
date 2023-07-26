@@ -1,4 +1,4 @@
-import { MutationTree } from "vuex";
+import { ActionTree, MutationTree } from "vuex";
 
 export interface ICard {
   id: number;
@@ -18,7 +18,7 @@ export interface CardActionContext {
 export interface CardState {
   cards: ICard[];
   isLoading: boolean;
-  searchQuery: string;
+  cardOne: ICard;
 }
 
 export interface CardMutations extends MutationTree<CardState> {
@@ -26,4 +26,9 @@ export interface CardMutations extends MutationTree<CardState> {
   setLoading(state: CardState, bool: boolean): void;
   addCard(state: CardState, card: ICard): void;
   removeCard(state: CardState, cardId: number): void;
+}
+
+export interface CardGetters {
+  // Other getters...
+  fetchCardById(state: CardState): (id: number) => ICard | undefined;
 }

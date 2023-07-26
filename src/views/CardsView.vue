@@ -2,7 +2,7 @@
   <div>
     <div>Card page</div>
     <card-form @create="createCard" />
-    <card-list :cards="cards" @remove="removeCard" v-if="!isLoading" />
+    <card-list :cards="cards" @remove="removeCards" v-if="!isLoading" />
     <app-loader v-else />
   </div>
 </template>
@@ -21,7 +21,6 @@ export default defineComponent({
     ...mapState<CardState>("card", {
       cards: (state: CardState) => state.cards,
       isLoading: (state: CardState) => state.isLoading,
-      searchQuery: (state: CardState) => state.searchQuery,
     }),
   },
   components: { AppLoader, CardForm, CardList },
@@ -37,7 +36,7 @@ export default defineComponent({
     createCard(card: ICard) {
       this.addCard(card);
     },
-    removeCard(cardId: number) {
+    removeCards(cardId: number) {
       this.removeCard(cardId);
     },
   },
